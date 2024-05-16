@@ -2,19 +2,33 @@ public class Bebida {
     private String nome;
     private float teorAlcoolico;
     private float volume;
-    private int quantidade;
     private float preco;
+    private int quantidade;
 
-    public Bebida() {
+    public Bebida(){
     }
 
-    public Bebida(String nome, float teorAlcoolico, float volume) {
+    public Bebida(String nome, float teorAlcoolico){
         this.nome = nome;
         this.teorAlcoolico = teorAlcoolico;
-        this.volume = volume;
     }
 
-    // getters e setters
+    public Bebida(String nome, float teorAlcoolico,
+                  float volume, float preco, int quantidade) {
+        this(nome, teorAlcoolico); // chama o construtor anterior
+        this.volume = volume;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setTeorAlcoolico(float teorAlcoolico){
+        this.teorAlcoolico = teorAlcoolico;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -27,31 +41,23 @@ public class Bebida {
         return volume;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public void setVolume(float volume) {
+        this.volume = volume;
     }
 
     public float getPreco() {
         return preco;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPreco(float preco) {
+        this.preco = preco;
     }
 
-    public void setTeorAlcoolico(float teorAlcoolico) {
-        this.teorAlcoolico = teorAlcoolico;
-    }
-
-    public void setVolume(float volume) {
-        this.volume = volume;
+    public int getQuantidade() {
+        return quantidade;
     }
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public void setPreco(float preco) {
-        this.preco = preco;
     }
 }

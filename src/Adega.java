@@ -4,7 +4,7 @@ import java.util.List;
 public class Adega {
     private List<Bebida> bebidas;
 
-    public Adega() {
+    public Adega(){
         bebidas = new ArrayList<>();
     }
 
@@ -12,19 +12,11 @@ public class Adega {
         bebidas.add(bebida);
     }
 
-    public void listarBebidas() {
+    public void consultarBebidas() {
         for (Bebida bebida : bebidas) {
-            System.out.println(bebida.getNome() + ", " +
-                    bebida.getVolume() + "ml, " +
-                    bebida.getTeorAlcoolico() + "%");
+            System.out.println(bebida.getNome());
+            System.out.println(bebida.getTeorAlcoolico());
+            System.out.println(bebida.getVolume());
         }
-    }
-
-    public float calcularValorTotal() {
-        float valorEstoque = 0;
-        for (Bebida bebida : bebidas) {
-            valorEstoque += bebida.getPreco() * bebida.getQuantidade();
-        }
-        return valorEstoque;
     }
 }
